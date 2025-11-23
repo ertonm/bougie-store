@@ -1,0 +1,128 @@
+@import 'variables';
+@import 'mixins';
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; // Hidden by default
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    &.open {
+        right: 0;
+    }
+
+    .cart-header {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+    }
+
+    .cart-items {
+        flex: 1;
+        overflow-y: auto;
+        padding: 2rem;
+
+        .empty-msg {
+            text-align: center;
+            color: $text-light;
+            margin-top: 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid $border-color;
+
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+            }
+
+            .item-info {
+                flex: 1;
+
+                h4 {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .price {
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                }
+
+                .remove-btn {
+                    background: none;
+                    border: none;
+                    color: $text-light;
+                    font-size: 0.8rem;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    padding: 0;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .cart-footer {
+        padding: 2rem;
+        border-top: 1px solid $border-color;
+        background: $secondary-color;
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            font-family: $font-header;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: $primary-color;
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            @include transition-default;
+
+            &:hover {
+                background: $accent-color;
+            }
+        }
+    }
+}

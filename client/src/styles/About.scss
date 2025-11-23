@@ -1,0 +1,189 @@
+@import 'variables';
+@import 'mixins';
+
+.about-page {
+    padding-top: 6em;
+
+    .hero-section {
+        height: 60vh;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+            url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+
+            h1 {
+                font-family: $font-header;
+                font-size: 4rem;
+                font-weight: 300;
+                letter-spacing: 4px;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+                color: $secondary-color;
+            }
+
+            .tagline {
+                font-family: $font-logo;
+                font-size: 1.5rem;
+                font-weight: 300;
+                letter-spacing: 2px;
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .story-section,
+    .values-section,
+    .closing-section {
+        padding: 6rem 2rem;
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: $font-header;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: $primary-color;
+            text-transform: uppercase;
+        }
+    }
+
+    .story-section {
+        background: white;
+
+        .story-block {
+            margin-bottom: 4rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+            }
+
+            p {
+                font-family: $font-body;
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: $text-color;
+                margin-bottom: 1.5rem;
+                text-align: justify;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .values-section {
+        background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+
+            .value-card {
+                background: white;
+                padding: 2.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+                }
+
+                h3 {
+                    font-family: $font-header;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    letter-spacing: 2px;
+                    margin-bottom: 1rem;
+                    color: $primary-color;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-family: $font-body;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: $text-light;
+                }
+            }
+        }
+    }
+
+    .closing-section {
+        background: $primary-color;
+        color: white;
+
+        h2 {
+            color: white;
+        }
+
+        p {
+            font-family: $font-body;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 1.5rem;
+
+            &.signature {
+                font-family: $font-logo;
+                font-size: 2rem;
+                font-style: italic;
+                margin-top: 3rem;
+                margin-bottom: 0;
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        .hero-section {
+            .hero-content {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                .tagline {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .story-section,
+        .values-section,
+        .closing-section {
+            padding: 4rem 1.5rem;
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+}

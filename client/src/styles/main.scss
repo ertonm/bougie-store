@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+
+// Reset Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-body;
+    color: $text-color;
+    background-color: $secondary-color;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-header;
+    color: $primary-color;
+    font-weight: 700;
+}
+
+button {
+    font-family: $font-body;
+}
