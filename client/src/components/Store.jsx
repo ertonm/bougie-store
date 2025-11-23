@@ -35,7 +35,8 @@ const Store = ({ onAddToCart, onQuickView, initialFilters }) => {
                 if (filters.minPrice) params.append('minPrice', filters.minPrice);
                 if (filters.maxPrice) params.append('maxPrice', filters.maxPrice);
 
-                const res = await axios.get(`http://localhost:5000/api/products?${params.toString()}`);
+                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+                const res = await axios.get(`${apiUrl}/api/products?${params.toString()}`);
                 setProducts(res.data);
             } catch (err) {
                 console.error("Error fetching products:", err);
